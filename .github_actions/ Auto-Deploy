@@ -1,10 +1,9 @@
 name: Auto Deploy
-
-on:
-  schedule:
-    - cron: "0 0 * * *"
-
-jobs:
+uses: actions/checkout@v4
+on: github/workflow
+schedule:
+- cron: "0 0 * * *"
+jobs: 
   check:
     runs-on: ubuntu-latest
     outputs:
@@ -16,7 +15,6 @@ jobs:
         id: set-output
         shell: bash
         run: ./scripts/check-deploy.sh
-
   deploy:
     needs: check
     if: needs.check.outputs.deploy == 'true'
@@ -25,4 +23,4 @@ jobs:
       contents: write
     uses: ./.github/workflows/publish.yml
     with:
-      destination_dir: ./
+      destination_dir: ./actions/cache
