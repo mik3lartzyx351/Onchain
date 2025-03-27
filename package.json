@@ -20,7 +20,7 @@
     "@chakra-ui/react": "^2.7.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@walletconnect/ethereum-provider": "^2.8.0",
+    "@walletconnect/ethereum-provider": "^2.8.2",
     "@walletconnect/modal": "^2.4.5",
     "ethers": "^6.5.1",
     "framer-motion": "^10.12.16",
